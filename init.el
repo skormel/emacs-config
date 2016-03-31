@@ -42,6 +42,7 @@
     py-autopep8
     color-theme-modern
     magit
+    markdown-mode
     zygospore))
 
 (defun install-packages ()
