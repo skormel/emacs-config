@@ -8,6 +8,15 @@
 
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(require 'linum)
+(setq linum-format "%d ")
+;(autoload 'linum "linum" "Line numbers for buffers." t)
+(add-hook 'find-file-hook (lambda () (linum-mode 1)))
+
+(menu-bar-mode 0)
+(scroll-bar-mode 0)
+(tool-bar-mode 0)
+
 (defconst demo-packages
   '(anzu
     company
@@ -28,6 +37,11 @@
     projectile
     volatile-highlights
     undo-tree
+    elpy
+    flycheck
+    py-autopep8
+    color-theme-modern
+    magit
     zygospore))
 
 (defun install-packages ()
@@ -158,3 +172,19 @@
 
 ;; Package zygospore
 (global-set-key (kbd "C-x 1") 'zygospore-toggle-delete-other-windows)
+(global-set-key (kbd "C-x g") 'magit-status)
+(global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
+
+(elpy-enable)
+(when (require 'flycheck nil t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
+
+(require 'py-autopep8)
+(add-hook 'elpy-mode-hook 'py-autopep8-enable-on-save)
+
+(global-set-key (kbd "C-x a c") 'comment-region)  ; automatically indent when press RET
+(global-set-key (kbd "C-x a u c") 'uncomment-region)  ; automatically indent when press RET
+
+(load-theme 'arjen t t)
+(enable-theme 'arjen)
