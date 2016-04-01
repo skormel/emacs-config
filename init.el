@@ -37,12 +37,16 @@
     projectile
     volatile-highlights
     undo-tree
+    2048-game
     elpy
     flycheck
-    py-autopep8
-    color-theme-modern
+    jade-mode
     magit
+    py-autopep8
+    jedi
+    color-theme-modern
     markdown-mode
+    auctex
     zygospore))
 
 (defun install-packages ()
