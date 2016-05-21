@@ -47,6 +47,7 @@
     color-theme-modern
     markdown-mode
     auctex
+    haskell-mode
     zygospore))
 
 (defun install-packages ()
