@@ -48,7 +48,7 @@
     markdown-mode
     auctex
     haskell-mode
-    js3-mode
+    js2-mode
     json-mode
     zygospore))
 
@@ -198,8 +198,8 @@
 (enable-theme 'arjen)
 
 
-;; use web-mode for .jsx files
-(add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
+;; ;; use web-mode for .jsx files
+;; (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
 
 ;; http://www.flycheck.org/manual/latest/index.html
 (require 'flycheck)
@@ -245,3 +245,16 @@
 ;;     (let ((web-mode-enable-part-face nil))
 ;;       ad-do-it)
 ;;     ad-do-it))
+
+
+;; (setq js3-consistent-level-indent-inner-bracket t)
+
+;; (custom-set-variables
+;;   ;; Your init file should contain only one such instance.
+;;   ;; If there is more than one, they won't work right.
+;;  '(js3-lazy-commas t)
+;;  '(js3-lazy-operators t)
+;;  '(js3-expr-indent-offset 2)
+;;  '(js3-paren-indent-offset 2)
+;;  '(js3-square-indent-offset 2)
+;;  '(js3-curly-indent-offset 2))
